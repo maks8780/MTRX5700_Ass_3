@@ -1,0 +1,8 @@
+prefix=/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/install
+
+Name: landmarks_msg
+Description: Description of landmarks_msg
+Version: 1.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: 
