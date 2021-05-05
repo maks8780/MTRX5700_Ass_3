@@ -13,21 +13,21 @@ fi
 
 echo_and_run() { echo "+ $@" ; "$@" ; }
 
-echo_and_run cd "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/src/SLAM/turtlebot3/turtlebot3_example"
+echo_and_run cd "/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/src/SLAM/turtlebot3/turtlebot3_example"
 
 # ensure that Python install destination exists
-echo_and_run mkdir -p "$DESTDIR/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/install/lib/python2.7/dist-packages"
+echo_and_run mkdir -p "$DESTDIR/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/install/lib/python2.7/dist-packages"
 
 # Note that PYTHONPATH is pulled from the environment to support installing
 # into one location when some dependencies were installed in another
 # location, #123.
 echo_and_run /usr/bin/env \
-    PYTHONPATH="/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/install/lib/python2.7/dist-packages:/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_example/lib/python2.7/dist-packages:$PYTHONPATH" \
-    CATKIN_BINARY_DIR="/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_example" \
+    PYTHONPATH="/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/install/lib/python2.7/dist-packages:/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_example/lib/python2.7/dist-packages:$PYTHONPATH" \
+    CATKIN_BINARY_DIR="/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_example" \
     "/usr/bin/python2" \
-    "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/src/SLAM/turtlebot3/turtlebot3_example/setup.py" \
+    "/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/src/SLAM/turtlebot3/turtlebot3_example/setup.py" \
      \
-    build --build-base "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_example" \
+    build --build-base "/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_example" \
     install \
     --root="${DESTDIR-/}" \
-    --install-layout=deb --prefix="/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/install" --install-scripts="/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/install/bin"
+    --install-layout=deb --prefix="/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/install" --install-scripts="/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/install/bin"

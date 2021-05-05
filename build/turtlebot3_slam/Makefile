@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/src/SLAM/turtlebot3/turtlebot3_slam
+CMAKE_SOURCE_DIR = /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/src/SLAM/turtlebot3/turtlebot3_slam
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_slam
+CMAKE_BINARY_DIR = /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_slam
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,9 +137,9 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_slam/CMakeFiles /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_slam/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_slam/CMakeFiles /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_slam/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_slam/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_slam/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

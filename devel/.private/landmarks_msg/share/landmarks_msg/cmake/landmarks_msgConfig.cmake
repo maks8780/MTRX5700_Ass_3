@@ -67,14 +67,14 @@ set(landmarks_msg_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(landmarks_msg_SOURCE_PREFIX /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/src/SLAM/landmark_msg)
-  set(landmarks_msg_DEVEL_PREFIX /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/devel/.private/landmarks_msg)
+  set(landmarks_msg_SOURCE_PREFIX /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/src/SLAM/landmark_msg)
+  set(landmarks_msg_DEVEL_PREFIX /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/devel/.private/landmarks_msg)
   set(landmarks_msg_INSTALL_PREFIX "")
   set(landmarks_msg_PREFIX ${landmarks_msg_DEVEL_PREFIX})
 else()
   set(landmarks_msg_SOURCE_PREFIX "")
   set(landmarks_msg_DEVEL_PREFIX "")
-  set(landmarks_msg_INSTALL_PREFIX /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/install)
+  set(landmarks_msg_INSTALL_PREFIX /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/install)
   set(landmarks_msg_PREFIX ${landmarks_msg_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(landmarks_msg_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/devel/.private/landmarks_msg/include " STREQUAL " ")
+if(NOT "/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/devel/.private/landmarks_msg/include " STREQUAL " ")
   set(landmarks_msg_INCLUDE_DIRS "")
-  set(_include_dirs "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/devel/.private/landmarks_msg/include")
+  set(_include_dirs "/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/devel/.private/landmarks_msg/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/devel/.priva
         message(FATAL_ERROR "Project 'landmarks_msg' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'landmarks_msg' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/src/SLAM/landmark_msg/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'landmarks_msg' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/src/SLAM/landmark_msg/${idir}'.  ${_report}")
     endif()
     _list_append_unique(landmarks_msg_INCLUDE_DIRS ${include})
   endforeach()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/devel/.private/landmarks_msg/lib;/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/devel/.private/landmarks_msg/lib;/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/devel/lib;/home/mtrx5700/Desktop/MTRX5700/MTRX5700_assignment3/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

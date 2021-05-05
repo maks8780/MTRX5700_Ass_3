@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/src/question_2/slam_gmapping/gmapping
+CMAKE_SOURCE_DIR = /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/src/question_2/slam_gmapping/gmapping
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/gmapping
+CMAKE_BINARY_DIR = /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/gmapping
 
 # Utility rule file for rosgraph_msgs_generate_messages_cpp.
 
@@ -67,6 +67,6 @@ CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean:
 .PHONY : CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
 
 CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/depend:
-	cd /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/gmapping && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/src/question_2/slam_gmapping/gmapping /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/src/question_2/slam_gmapping/gmapping /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/gmapping /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/gmapping /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/gmapping/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/gmapping && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/src/question_2/slam_gmapping/gmapping /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/src/question_2/slam_gmapping/gmapping /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/gmapping /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/gmapping /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/gmapping/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/depend
 

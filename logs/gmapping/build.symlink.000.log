@@ -1,6 +1,6 @@
-Symlinking /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/devel/lib/libslam_gmapping_nodelet.so
-Symlinking /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/devel/lib/pkgconfig/gmapping.pc
-Symlinking /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/devel/lib/gmapping/slam_gmapping_replay
-Symlinking /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/devel/lib/gmapping/slam_gmapping
-Symlinking /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/devel/share/gmapping/cmake/gmappingConfig-version.cmake
-Symlinking /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/devel/share/gmapping/cmake/gmappingConfig.cmake
+Symlinking /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/devel/lib/libslam_gmapping_nodelet.so
+Symlinking /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/devel/lib/pkgconfig/gmapping.pc
+Symlinking /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/devel/lib/gmapping/slam_gmapping_replay
+Symlinking /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/devel/lib/gmapping/slam_gmapping
+Symlinking /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/devel/share/gmapping/cmake/gmappingConfig-version.cmake
+Symlinking /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/devel/share/gmapping/cmake/gmappingConfig.cmake

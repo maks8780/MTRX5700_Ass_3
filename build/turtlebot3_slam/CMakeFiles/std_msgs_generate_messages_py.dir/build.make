@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/src/SLAM/turtlebot3/turtlebot3_slam
+CMAKE_SOURCE_DIR = /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/src/SLAM/turtlebot3/turtlebot3_slam
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_slam
+CMAKE_BINARY_DIR = /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_slam
 
 # Utility rule file for std_msgs_generate_messages_py.
 
@@ -67,6 +67,6 @@ CMakeFiles/std_msgs_generate_messages_py.dir/clean:
 .PHONY : CMakeFiles/std_msgs_generate_messages_py.dir/clean
 
 CMakeFiles/std_msgs_generate_messages_py.dir/depend:
-	cd /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_slam && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/src/SLAM/turtlebot3/turtlebot3_slam /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/src/SLAM/turtlebot3/turtlebot3_slam /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_slam /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_slam /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_slam/CMakeFiles/std_msgs_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_slam && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/src/SLAM/turtlebot3/turtlebot3_slam /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/src/SLAM/turtlebot3/turtlebot3_slam /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_slam /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_slam /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_slam/CMakeFiles/std_msgs_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/std_msgs_generate_messages_py.dir/depend
 

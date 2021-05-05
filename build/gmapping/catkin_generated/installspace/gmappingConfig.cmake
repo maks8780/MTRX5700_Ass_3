@@ -67,14 +67,14 @@ set(gmapping_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(gmapping_SOURCE_PREFIX /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/src/question_2/slam_gmapping/gmapping)
-  set(gmapping_DEVEL_PREFIX /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/devel/.private/gmapping)
+  set(gmapping_SOURCE_PREFIX /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/src/question_2/slam_gmapping/gmapping)
+  set(gmapping_DEVEL_PREFIX /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/devel/.private/gmapping)
   set(gmapping_INSTALL_PREFIX "")
   set(gmapping_PREFIX ${gmapping_DEVEL_PREFIX})
 else()
   set(gmapping_SOURCE_PREFIX "")
   set(gmapping_DEVEL_PREFIX "")
-  set(gmapping_INSTALL_PREFIX /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/install)
+  set(gmapping_INSTALL_PREFIX /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/install)
   set(gmapping_PREFIX ${gmapping_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/install/lib;/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/install/lib;/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/devel/lib;/home/mtrx5700/Desktop/MTRX5700/MTRX5700_assignment3/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

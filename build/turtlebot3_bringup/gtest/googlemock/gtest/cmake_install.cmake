@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/install")
+  set(CMAKE_INSTALL_PREFIX "/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

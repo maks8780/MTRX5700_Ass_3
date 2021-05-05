@@ -1,4 +1,4 @@
-prefix=/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/install
+prefix=/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/install
 
 Name: landmarks_msg
 Description: Description of landmarks_msg

@@ -1,0 +1,6 @@
+<launch>
+
+	<node pkg="assignment_2" type="icp_main" name="icp_registration" output="screen">
+	<!-- <rosparam command="load" file="$(find python_service_starter)/config/$(arg config_file)"/> -->
+	</node>
+</launch>

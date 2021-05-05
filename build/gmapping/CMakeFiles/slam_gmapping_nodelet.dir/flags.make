@@ -6,5 +6,5 @@ CXX_FLAGS = -fPIC
 
 CXX_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"gmapping\" -Dslam_gmapping_nodelet_EXPORTS
 
-CXX_INCLUDES = -I/opt/ros/melodic/include -I/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/src/question_2/slam_gmapping/gmapping/src 
+CXX_INCLUDES = -I/opt/ros/melodic/include -I/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/src/question_2/slam_gmapping/gmapping/src 
 

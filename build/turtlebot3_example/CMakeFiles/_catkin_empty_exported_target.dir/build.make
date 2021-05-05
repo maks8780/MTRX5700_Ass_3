@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/src/SLAM/turtlebot3/turtlebot3_example
+CMAKE_SOURCE_DIR = /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/src/SLAM/turtlebot3/turtlebot3_example
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_example
+CMAKE_BINARY_DIR = /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_example
 
 # Utility rule file for _catkin_empty_exported_target.
 
@@ -67,6 +67,6 @@ CMakeFiles/_catkin_empty_exported_target.dir/clean:
 .PHONY : CMakeFiles/_catkin_empty_exported_target.dir/clean
 
 CMakeFiles/_catkin_empty_exported_target.dir/depend:
-	cd /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_example && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/src/SLAM/turtlebot3/turtlebot3_example /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/src/SLAM/turtlebot3/turtlebot3_example /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_example /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_example /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_example/CMakeFiles/_catkin_empty_exported_target.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_example && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/src/SLAM/turtlebot3/turtlebot3_example /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/src/SLAM/turtlebot3/turtlebot3_example /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_example /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_example /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_example/CMakeFiles/_catkin_empty_exported_target.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/_catkin_empty_exported_target.dir/depend
 
