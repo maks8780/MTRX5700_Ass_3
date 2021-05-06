@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/src/icp/src/get_laser_data.cpp
+/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/src/icp/src/get_laser_data.cpp
 ros/ros.h
 -
 sensor_msgs/LaserScan.h

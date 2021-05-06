@@ -1,24 +1,24 @@
 Determining if the pthread_create exist failed with the following output:
-Change Dir: /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_example/CMakeFiles/CMakeTmp
+Change Dir: /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_example/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_4f764/fast"
-/usr/bin/make -f CMakeFiles/cmTC_4f764.dir/build.make CMakeFiles/cmTC_4f764.dir/build
-make[1]: Entering directory '/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_example/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_4f764.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_4f764.dir/CheckSymbolExists.c.o   -c /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_example/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_4f764
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4f764.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_4f764.dir/CheckSymbolExists.c.o  -o cmTC_4f764 
-CMakeFiles/cmTC_4f764.dir/CheckSymbolExists.c.o: In function `main':
+Run Build Command:"/usr/bin/make" "cmTC_6dd1a/fast"
+/usr/bin/make -f CMakeFiles/cmTC_6dd1a.dir/build.make CMakeFiles/cmTC_6dd1a.dir/build
+make[1]: Entering directory '/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_example/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6dd1a.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_6dd1a.dir/CheckSymbolExists.c.o   -c /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_example/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_6dd1a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6dd1a.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_6dd1a.dir/CheckSymbolExists.c.o  -o cmTC_6dd1a 
+CMakeFiles/cmTC_6dd1a.dir/CheckSymbolExists.c.o: In function `main':
 CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_4f764.dir/build.make:97: recipe for target 'cmTC_4f764' failed
-make[1]: *** [cmTC_4f764] Error 1
-make[1]: Leaving directory '/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_example/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_4f764/fast' failed
-make: *** [cmTC_4f764/fast] Error 2
+CMakeFiles/cmTC_6dd1a.dir/build.make:97: recipe for target 'cmTC_6dd1a' failed
+make[1]: *** [cmTC_6dd1a] Error 1
+make[1]: Leaving directory '/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_example/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_6dd1a/fast' failed
+make: *** [cmTC_6dd1a/fast] Error 2
 
-File /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_example/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+File /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_example/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
 #include <pthread.h>
 
@@ -34,22 +34,22 @@ int main(int argc, char** argv)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_example/CMakeFiles/CMakeTmp
+Change Dir: /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_example/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_0f041/fast"
-/usr/bin/make -f CMakeFiles/cmTC_0f041.dir/build.make CMakeFiles/cmTC_0f041.dir/build
-make[1]: Entering directory '/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_example/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_0f041.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_0f041.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
-Linking C executable cmTC_0f041
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0f041.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_0f041.dir/CheckFunctionExists.c.o  -o cmTC_0f041 -lpthreads 
+Run Build Command:"/usr/bin/make" "cmTC_ed2f8/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ed2f8.dir/build.make CMakeFiles/cmTC_ed2f8.dir/build
+make[1]: Entering directory '/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_example/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ed2f8.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_ed2f8.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_ed2f8
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ed2f8.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_ed2f8.dir/CheckFunctionExists.c.o  -o cmTC_ed2f8 -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_0f041.dir/build.make:97: recipe for target 'cmTC_0f041' failed
-make[1]: *** [cmTC_0f041] Error 1
-make[1]: Leaving directory '/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_example/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_0f041/fast' failed
-make: *** [cmTC_0f041/fast] Error 2
+CMakeFiles/cmTC_ed2f8.dir/build.make:97: recipe for target 'cmTC_ed2f8' failed
+make[1]: *** [cmTC_ed2f8] Error 1
+make[1]: Leaving directory '/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_example/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_ed2f8/fast' failed
+make: *** [cmTC_ed2f8/fast] Error 2
 
 

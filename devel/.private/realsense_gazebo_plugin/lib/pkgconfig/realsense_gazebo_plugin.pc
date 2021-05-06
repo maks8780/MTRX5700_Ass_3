@@ -1,4 +1,4 @@
-prefix=/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/devel/.private/realsense_gazebo_plugin
+prefix=/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/devel/.private/realsense_gazebo_plugin
 
 Name: realsense_gazebo_plugin
 Description: Description of realsense_gazebo_plugin

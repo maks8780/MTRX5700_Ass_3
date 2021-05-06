@@ -1,24 +1,24 @@
 Determining if the pthread_create exist failed with the following output:
-Change Dir: /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/a3_icp/CMakeFiles/CMakeTmp
+Change Dir: /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/a3_icp/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_7b876/fast"
-/usr/bin/make -f CMakeFiles/cmTC_7b876.dir/build.make CMakeFiles/cmTC_7b876.dir/build
-make[1]: Entering directory '/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/a3_icp/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_7b876.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_7b876.dir/CheckSymbolExists.c.o   -c /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/a3_icp/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_7b876
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7b876.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_7b876.dir/CheckSymbolExists.c.o  -o cmTC_7b876 
-CMakeFiles/cmTC_7b876.dir/CheckSymbolExists.c.o: In function `main':
+Run Build Command:"/usr/bin/make" "cmTC_b9175/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b9175.dir/build.make CMakeFiles/cmTC_b9175.dir/build
+make[1]: Entering directory '/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/a3_icp/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b9175.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_b9175.dir/CheckSymbolExists.c.o   -c /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/a3_icp/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_b9175
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b9175.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_b9175.dir/CheckSymbolExists.c.o  -o cmTC_b9175 
+CMakeFiles/cmTC_b9175.dir/CheckSymbolExists.c.o: In function `main':
 CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_7b876.dir/build.make:97: recipe for target 'cmTC_7b876' failed
-make[1]: *** [cmTC_7b876] Error 1
-make[1]: Leaving directory '/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/a3_icp/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_7b876/fast' failed
-make: *** [cmTC_7b876/fast] Error 2
+CMakeFiles/cmTC_b9175.dir/build.make:97: recipe for target 'cmTC_b9175' failed
+make[1]: *** [cmTC_b9175] Error 1
+make[1]: Leaving directory '/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/a3_icp/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_b9175/fast' failed
+make: *** [cmTC_b9175/fast] Error 2
 
-File /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/a3_icp/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+File /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/a3_icp/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
 #include <pthread.h>
 
@@ -34,22 +34,22 @@ int main(int argc, char** argv)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/a3_icp/CMakeFiles/CMakeTmp
+Change Dir: /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/a3_icp/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_93e6b/fast"
-/usr/bin/make -f CMakeFiles/cmTC_93e6b.dir/build.make CMakeFiles/cmTC_93e6b.dir/build
-make[1]: Entering directory '/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/a3_icp/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_93e6b.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_93e6b.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
-Linking C executable cmTC_93e6b
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_93e6b.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_93e6b.dir/CheckFunctionExists.c.o  -o cmTC_93e6b -lpthreads 
+Run Build Command:"/usr/bin/make" "cmTC_0f7ff/fast"
+/usr/bin/make -f CMakeFiles/cmTC_0f7ff.dir/build.make CMakeFiles/cmTC_0f7ff.dir/build
+make[1]: Entering directory '/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/a3_icp/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0f7ff.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_0f7ff.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_0f7ff
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0f7ff.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_0f7ff.dir/CheckFunctionExists.c.o  -o cmTC_0f7ff -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_93e6b.dir/build.make:97: recipe for target 'cmTC_93e6b' failed
-make[1]: *** [cmTC_93e6b] Error 1
-make[1]: Leaving directory '/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/a3_icp/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_93e6b/fast' failed
-make: *** [cmTC_93e6b/fast] Error 2
+CMakeFiles/cmTC_0f7ff.dir/build.make:97: recipe for target 'cmTC_0f7ff' failed
+make[1]: *** [cmTC_0f7ff] Error 1
+make[1]: Leaving directory '/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/a3_icp/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_0f7ff/fast' failed
+make: *** [cmTC_0f7ff/fast] Error 2
 
 

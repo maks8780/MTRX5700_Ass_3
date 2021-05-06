@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/turtlebot3_fake_node.dir/src/turtlebot3_fake.cpp.o"
-  "/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/devel/.private/turtlebot3_fake/lib/turtlebot3_fake/turtlebot3_fake_node.pdb"
-  "/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/devel/.private/turtlebot3_fake/lib/turtlebot3_fake/turtlebot3_fake_node"
+  "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/devel/.private/turtlebot3_fake/lib/turtlebot3_fake/turtlebot3_fake_node.pdb"
+  "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/devel/.private/turtlebot3_fake/lib/turtlebot3_fake/turtlebot3_fake_node"
 )
 
 # Per-language clean rules from dependency scanning.

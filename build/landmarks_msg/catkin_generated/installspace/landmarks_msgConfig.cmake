@@ -67,14 +67,14 @@ set(landmarks_msg_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(landmarks_msg_SOURCE_PREFIX /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/src/SLAM/landmark_msg)
-  set(landmarks_msg_DEVEL_PREFIX /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/devel/.private/landmarks_msg)
+  set(landmarks_msg_SOURCE_PREFIX /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/src/SLAM/landmark_msg)
+  set(landmarks_msg_DEVEL_PREFIX /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/devel/.private/landmarks_msg)
   set(landmarks_msg_INSTALL_PREFIX "")
   set(landmarks_msg_PREFIX ${landmarks_msg_DEVEL_PREFIX})
 else()
   set(landmarks_msg_SOURCE_PREFIX "")
   set(landmarks_msg_DEVEL_PREFIX "")
-  set(landmarks_msg_INSTALL_PREFIX /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/install)
+  set(landmarks_msg_INSTALL_PREFIX /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/install)
   set(landmarks_msg_PREFIX ${landmarks_msg_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/install/lib;/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/devel/lib;/home/mtrx5700/Desktop/MTRX5700/MTRX5700_assignment3/devel/lib;/opt/ros/melodic/lib)
+    foreach(path /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/install/lib;/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
