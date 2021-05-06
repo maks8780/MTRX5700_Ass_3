@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/src/icp
+CMAKE_SOURCE_DIR = /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/src/icp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/a3_icp
+CMAKE_BINARY_DIR = /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/a3_icp
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,9 +137,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/a3_icp/CMakeFiles /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/a3_icp/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/a3_icp/CMakeFiles /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/a3_icp/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/a3_icp/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/a3_icp/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

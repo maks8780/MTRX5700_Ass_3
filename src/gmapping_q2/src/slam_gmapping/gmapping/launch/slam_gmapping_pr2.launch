@@ -1,0 +1,95 @@
+<!-- <launch>
+
+  <param name="use_sim_time" value="true"/>
+
+  <param name="base_frame" value="base_footprint"/>
+
+  <node pkg="gmapping_q2" type="odom_to_path.py" name="odom_to_path">
+  </node>
+
+    <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
+      <remap from= "scan" to= "base_scan"/>
+      <param name= "odom_frame" value= "odom"/>
+      <param name="map_update_interval" value="5.0"/>
+      <param name="maxUrange" value="3.0"/>
+      <param name="sigma" value="0.05"/>
+      <param name="kernelSize" value="1"/>
+      <param name="lstep" value="0.05"/>
+      <param name="astep" value="0.05"/>
+      <param name="iterations" value="5"/>
+      <param name="lsigma" value="0.075"/>
+      <param name="ogain" value="3.0"/>
+      <param name="lskip" value="0"/>
+      <param name="srr" value="0.1"/>
+      <param name="srt" value="0.2"/>
+      <param name="str" value="0.1"/>
+      <param name="stt" value="0.2"/>
+      <param name="linearUpdate" value="0.1"/>
+      <param name="angularUpdate" value="0.1"/>
+      <param name="temporalUpdate" value="-1.0"/>
+      <param name="resampleThreshold" value="0.5"/>
+      <param name="particles" value="100"/>
+      <param name="xmin" value="-2.0"/>
+      <param name="ymin" value="-2.0"/>
+      <param name="xmax" value="2.0"/>
+      <param name="ymax" value="2.0"/>
+      <param name="delta" value="0.05"/>
+      <param name="llsamplerange" value="0.01"/>
+      <param name="llsamplestep" value="0.01"/>
+      <param name="lasamplerange" value="0.005"/>
+      <param name="lasamplestep" value="0.005"/>
+      <param name= "base_frame" value= "base_footprint"/>
+    </node>
+</launch> -->
+
+
+<launch>
+
+  <param name="use_sim_time" value="true"/>
+  <param name="base_frame" value="base_footprint"/>
+
+  <!-- <node pkg="gmapping_q2" type="setup_tf" name="setup_tf">
+  </node> -->
+
+
+  <node pkg="gmapping_q2" type="odom_to_path.py" name="odom_to_path">
+  </node>
+
+  
+    <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
+    
+    <rosparam>
+      odom_frame: odom
+      map_update_interval: 0.5
+      maxUrange: 30.0
+      sigma: 0.05
+      kernelSize: 1
+      lstep: 0.05
+      astep: 0.05
+      iterations: 5
+      lsigma: 0.075
+      ogain: 3.0
+      lskip: 0
+      srr: 0.1
+      srt: 0.2
+      str: 0.1
+      stt: 0.2
+      linearUpdate: 1.0
+      angularUpdate: 0.5
+      temporalUpdate: 3.0
+      resampleThreshold: 0.5
+      particles: 30
+      xmin: -5.0
+      ymin: -5.0
+      xmax: 5.0
+      ymax: 5.0
+      delta: 0.025
+      llsamplerange: 0.01
+      llsamplestep: 0.01
+      lasamplerange: 0.005
+      lasamplestep: 0.005
+      base_frame: base_footprint
+    </rosparam>
+  </node> 
+
+</launch>

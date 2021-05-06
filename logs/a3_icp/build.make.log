@@ -1,5 +1,6 @@
 [ 28%] Built target quaternion_to_rotation_matrix
 [ 71%] Built target icp_main
+<<<<<<< HEAD
 [35m[1mScanning dependencies of target get_laser_data[0m
 [ 85%] [32mBuilding CXX object CMakeFiles/get_laser_data.dir/src/get_laser_data.cpp.o[0m
 In file included from [01m[K/usr/include/pcl-1.8/pcl/sample_consensus/sac_model.h:52:0[m[K,
@@ -13,4 +14,6 @@ In file included from [01m[K/usr/include/pcl-1.8/pcl/sample_consensus/sac_mode
    [01;35m[K^~~~~~~~~~~~~~~[m[K
 [01m[K/usr/include/pcl-1.8/pcl/sample_consensus/model_types.h:99:3:[m[K [01;36m[Knote: [m[Kdeclared here
 [100%] [32m[1mLinking CXX executable /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/devel/.private/a3_icp/lib/a3_icp/get_laser_data[0m
+=======
+>>>>>>> backup-master
 [100%] Built target get_laser_data

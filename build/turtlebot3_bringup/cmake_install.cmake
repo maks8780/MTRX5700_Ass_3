@@ -1,8 +1,8 @@
-# Install script for directory: /home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/src/SLAM/turtlebot3/turtlebot3_bringup
+# Install script for directory: /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/src/SLAM/turtlebot3/turtlebot3_bringup
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/install")
+  set(CMAKE_INSTALL_PREFIX "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -49,98 +49,98 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/install/_setup_util.py")
+   "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/install/_setup_util.py")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/install" TYPE PROGRAM FILES "/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_bringup/catkin_generated/installspace/_setup_util.py")
+file(INSTALL DESTINATION "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/install" TYPE PROGRAM FILES "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_bringup/catkin_generated/installspace/_setup_util.py")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/install/env.sh")
+   "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/install/env.sh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/install" TYPE PROGRAM FILES "/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_bringup/catkin_generated/installspace/env.sh")
+file(INSTALL DESTINATION "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/install" TYPE PROGRAM FILES "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_bringup/catkin_generated/installspace/env.sh")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/install/setup.bash;/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/install/local_setup.bash")
+   "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/install/setup.bash;/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/install/local_setup.bash")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/install" TYPE FILE FILES
-    "/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_bringup/catkin_generated/installspace/setup.bash"
-    "/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_bringup/catkin_generated/installspace/local_setup.bash"
+file(INSTALL DESTINATION "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/install" TYPE FILE FILES
+    "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_bringup/catkin_generated/installspace/setup.bash"
+    "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_bringup/catkin_generated/installspace/local_setup.bash"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/install/setup.sh;/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/install/local_setup.sh")
+   "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/install/setup.sh;/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/install/local_setup.sh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/install" TYPE FILE FILES
-    "/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_bringup/catkin_generated/installspace/setup.sh"
-    "/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_bringup/catkin_generated/installspace/local_setup.sh"
+file(INSTALL DESTINATION "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/install" TYPE FILE FILES
+    "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_bringup/catkin_generated/installspace/setup.sh"
+    "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_bringup/catkin_generated/installspace/local_setup.sh"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/install/setup.zsh;/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/install/local_setup.zsh")
+   "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/install/setup.zsh;/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/install/local_setup.zsh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/install" TYPE FILE FILES
-    "/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_bringup/catkin_generated/installspace/setup.zsh"
-    "/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_bringup/catkin_generated/installspace/local_setup.zsh"
+file(INSTALL DESTINATION "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/install" TYPE FILE FILES
+    "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_bringup/catkin_generated/installspace/setup.zsh"
+    "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_bringup/catkin_generated/installspace/local_setup.zsh"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/install/.rosinstall")
+   "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/install/.rosinstall")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/install" TYPE FILE FILES "/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_bringup/catkin_generated/installspace/.rosinstall")
+file(INSTALL DESTINATION "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/install" TYPE FILE FILES "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_bringup/catkin_generated/installspace/.rosinstall")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_bringup/catkin_generated/installspace/turtlebot3_bringup.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_bringup/catkin_generated/installspace/turtlebot3_bringup.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/turtlebot3_bringup/cmake" TYPE FILE FILES
-    "/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_bringup/catkin_generated/installspace/turtlebot3_bringupConfig.cmake"
-    "/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_bringup/catkin_generated/installspace/turtlebot3_bringupConfig-version.cmake"
+    "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_bringup/catkin_generated/installspace/turtlebot3_bringupConfig.cmake"
+    "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_bringup/catkin_generated/installspace/turtlebot3_bringupConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/turtlebot3_bringup" TYPE FILE FILES "/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/src/SLAM/turtlebot3/turtlebot3_bringup/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/turtlebot3_bringup" TYPE FILE FILES "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/src/SLAM/turtlebot3/turtlebot3_bringup/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -150,7 +150,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/turtlebot3_bringup/turtlebot3_diagnostics"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/turtlebot3_bringup" TYPE EXECUTABLE FILES "/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/devel/.private/turtlebot3_bringup/lib/turtlebot3_bringup/turtlebot3_diagnostics")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/turtlebot3_bringup" TYPE EXECUTABLE FILES "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/devel/.private/turtlebot3_bringup/lib/turtlebot3_bringup/turtlebot3_diagnostics")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/turtlebot3_bringup/turtlebot3_diagnostics" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/turtlebot3_bringup/turtlebot3_diagnostics")
     file(RPATH_CHANGE
@@ -164,20 +164,20 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/turtlebot3_bringup" TYPE PROGRAM FILES "/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/src/SLAM/turtlebot3/turtlebot3_bringup/scripts/create_udev_rules")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/turtlebot3_bringup" TYPE PROGRAM FILES "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/src/SLAM/turtlebot3/turtlebot3_bringup/scripts/create_udev_rules")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/turtlebot3_bringup" TYPE DIRECTORY FILES "/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/src/SLAM/turtlebot3/turtlebot3_bringup/launch")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/turtlebot3_bringup" TYPE DIRECTORY FILES "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/src/SLAM/turtlebot3/turtlebot3_bringup/launch")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/turtlebot3_bringup" TYPE FILE FILES "/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/src/SLAM/turtlebot3/turtlebot3_bringup/99-turtlebot3-cdc.rules")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/turtlebot3_bringup" TYPE FILE FILES "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/src/SLAM/turtlebot3/turtlebot3_bringup/99-turtlebot3-cdc.rules")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_bringup/gtest/cmake_install.cmake")
+  include("/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_bringup/gtest/cmake_install.cmake")
 
 endif()
 
@@ -189,5 +189,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_bringup/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/turtlebot3_bringup/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

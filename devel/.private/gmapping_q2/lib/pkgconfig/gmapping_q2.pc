@@ -1,0 +1,8 @@
+prefix=/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/devel/.private/gmapping_q2
+
+Name: gmapping_q2
+Description: Description of gmapping_q2
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

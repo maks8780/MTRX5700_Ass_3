@@ -62,7 +62,7 @@
 [  0%] Built target tf2_msgs_generate_messages_lisp
 [  0%] Built target dynamic_reconfigure_gencfg
 [  0%] Built target gazebo_msgs_generate_messages_eus
-[  0%] Built target trajectory_msgs_generate_messages_lisp
 [  0%] Built target trajectory_msgs_generate_messages_cpp
+[  0%] Built target trajectory_msgs_generate_messages_lisp
 [  0%] Built target trajectory_msgs_generate_messages_nodejs
 [100%] Built target realsense_gazebo_plugin
