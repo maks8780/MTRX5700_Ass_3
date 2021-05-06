@@ -5,4 +5,4 @@ Description: Description of a3_icp
 Version: 1.0.0
 Cflags: -I/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/src/icp/include
 Libs: -L${prefix}/lib 
-Requires: tf2_ros tf2_eigen tf2_geometry_msgs geometry_msgs sensor_msgs image_transport cv_bridge roscpp std_msgs rosbag std_msgs sensor_msgs roslib laser_geometry
+Requires: tf2_ros tf2_eigen tf2_geometry_msgs transform_broadcaster geometry_msgs sensor_msgs image_transport cv_bridge roscpp std_msgs rosbag std_msgs sensor_msgs roslib laser_geometry

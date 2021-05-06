@@ -185,7 +185,7 @@ foreach(t ${a3_icp_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "tf2_ros;tf2_eigen;tf2_geometry_msgs;geometry_msgs;sensor_msgs;image_transport;cv_bridge;roscpp;std_msgs;rosbag;std_msgs;sensor_msgs;roslib;laser_geometry")
+set(depends "tf2_ros;tf2_eigen;tf2_geometry_msgs;transform_broadcaster;geometry_msgs;sensor_msgs;image_transport;cv_bridge;roscpp;std_msgs;rosbag;std_msgs;sensor_msgs;roslib;laser_geometry")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls

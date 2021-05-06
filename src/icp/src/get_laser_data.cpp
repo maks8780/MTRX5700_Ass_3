@@ -7,6 +7,7 @@
 #include <laser_geometry/laser_geometry.h>
 #include <pcl/point_types.h>
 #include <pcl_conversions/pcl_conversions.h>
+#include <nav_msgs/Odometry.h>
 #include <pcl_ros/transforms.h>
 #include <vector>
 #include <string>
@@ -16,6 +17,9 @@
 #include <pcl_ros/transforms.h>
 #include <pcl/registration/icp.h>
 #include <pcl/filters/filter.h>
+#include <tf2_msgs/TFMessage.h>
+#include <tf2_geometry_msgs/tf2_geometry_msgs.h>
+#include <tf2_ros/transform_broadcaster.h>
 
 class LaserScanReceiver
 {
@@ -28,8 +32,9 @@ private:
      tf::TransformListener listener;
      message_filters::Subscriber<sensor_msgs::LaserScan> laser_sub;
      tf::MessageFilter<sensor_msgs::LaserScan> laser_notifier;
-
-     ros::Publisher pcl_pub;
+     // ros::Subscriber laser_sub;
+     ros::Publisher pcl_pub_in;
+     ros::Publisher icp_odom_pub;
 
 public:
      sensor_msgs::PointCloud2 cloud_out;
@@ -37,82 +42,132 @@ public:
      pcl::PCLPointCloud2 pcl_in;
      pcl::PCLPointCloud2 pcl_out;
      pcl::IterativeClosestPoint<pcl::PointXYZ, pcl::PointXYZ> icp;
-
      pcl::PointCloud<pcl::PointXYZ>::Ptr current_cloud;
      pcl::PointCloud<pcl::PointXYZ>::Ptr previous_cloud;
+     // tf2::Transform transformation_matrix;
+     Eigen::Matrix4f current_pose_hom;
 
-     int x = 0;
+     bool is_first = true;
+     bool is_first1 = true;
 
      LaserScanReceiver(ros::NodeHandle node, std::string tf, std::string topic) : n(node),
                                                                                   base_tf(tf),
                                                                                   laser_topic(topic),
-                                                                                  laser_sub(n, topic, 10),
-                                                                                  laser_notifier(laser_sub, listener, tf, 10)
+                                                                                  laser_sub(n, topic, 100),
+                                                                                  laser_notifier(laser_sub, listener, tf, 100)
 
      {
 
           laser_notifier.registerCallback(&LaserScanReceiver::scanCallback, this);
           laser_notifier.setTolerance(ros::Duration(0.2));
+          // laser_sub = node.subscribe(laser_topic, 100, &LaserScanReceiver::scanCallback, this);
 
-          pcl_pub = node.advertise<sensor_msgs::PointCloud2>("pcl_in", 1);
+          pcl_pub_in = node.advertise<sensor_msgs::PointCloud2>("pcl_in", 1);
+          icp_odom_pub = node.advertise<nav_msgs::Odometry>("icp_odom", 10);
 
           // point cloud pointers declared here
           current_cloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZ>>();
           previous_cloud = boost::make_shared<pcl::PointCloud<pcl::PointXYZ>>();
+          nav_msgs::OdometryConstPtr odom_ptr = ros::topic::waitForMessage<nav_msgs::Odometry>("/odom");
+
+          tf::Quaternion inital_quaternion;
+          inital_quaternion.setX(odom_ptr->pose.pose.orientation.x);
+          inital_quaternion.setY(odom_ptr->pose.pose.orientation.y);
+          inital_quaternion.setZ(odom_ptr->pose.pose.orientation.z);
+          inital_quaternion.setW(odom_ptr->pose.pose.orientation.w);
+
+          /**< quaternion -> rotation Matrix*/
+          tf::Matrix3x3 initial_rot;
+          initial_rot.setRotation(inital_quaternion);
+
+          current_pose_hom = Eigen::Matrix4f(4, 4);
+          current_pose_hom << initial_rot[0][0], initial_rot[0][1], initial_rot[0][2], odom_ptr->pose.pose.position.x,
+                              initial_rot[1][0], initial_rot[1][1], initial_rot[1][2], odom_ptr->pose.pose.position.y,
+                              initial_rot[2][0], initial_rot[2][1], initial_rot[2][2], odom_ptr->pose.pose.position.z,
+                              0, 0, 0, 1;
 
 
+                              
+
+          // current_pose_hom = Eigen::Matrix4f::Identity();
      }
 
-     void scanCallback(const sensor_msgs::LaserScan scan_in)
+     void scanCallback(const sensor_msgs::LaserScan &scan_in)
      {
-
-
-          // count for x, only performs ICP after call back has been called at
-          // leasttwice
-          x = x + 1;
-
+          static tf2_ros::TransformBroadcaster tf_broadcaster;
+          geometry_msgs::TransformStamped transform_stamped;
           // transform scan to point cloud ------------------------s
-          try
-          {
-               projector.transformLaserScanToPointCloud(
-                   base_tf.c_str(), scan_in, cloud_in, listener);
-          }
-          catch (tf::TransformException &e)
-          {
-               ROS_ERROR("%s", e.what());
-               return;
-          }
+
+          projector.transformLaserScanToPointCloud(
+              base_tf.c_str(), scan_in, cloud_in, listener);
 
           // ----------------------------------------------------
 
           ROS_INFO("publishing new point cloud");
-          pcl_pub.publish(cloud_in);
+          pcl_pub_in.publish(cloud_in);
 
           // converts sensor_msgs::point cloud
           pcl_conversions::toPCL(cloud_in, pcl_in);
           pcl::fromPCLPointCloud2(pcl_in, *current_cloud);
 
-          if (x > 2)
+          // ICP ---------------------------------------------------------------------------
+          ROS_INFO("PERFORMING ICP");
+          if (is_first)
           {
-               // ICP ---------------------------------------------------------------------------
-               ROS_INFO("PERFORMING ICP");
-
-               // define input and output point clouds
-               icp.setInputSource(current_cloud);
-
-               icp.setInputTarget(previous_cloud);
-
-               // Find iterative closest point
-               pcl::PointCloud<pcl::PointXYZ> Final;
-               icp.align(Final);
-               ROS_INFO("HERE3");
-
-               std::cout << "has converged:" << icp.hasConverged() << " score: " << icp.getFitnessScore() << std::endl;
-
-               std::cout << icp.getFinalTransformation() << std::endl;
-
-               // end ----------------------------------------------------------------------------
+               *previous_cloud = *current_cloud;
+               is_first = false;
+               return;
           }
+
+          // define input and output point clouds
+          icp.setInputSource(current_cloud);
+
+          icp.setInputTarget(previous_cloud);
+
+          icp.setMaxCorrespondenceDistance(0.1f);
+
+          // Set the transformation epsilon
+          icp.setTransformationEpsilon(1e-9);
+
+          // Find iterative closest point
+          pcl::PointCloud<pcl::PointXYZ> Final;
+          icp.align(Final);
+
+          std::cout << "has converged:" << icp.hasConverged() << " score: " << icp.getFitnessScore() << std::endl;
+
+          Eigen::Matrix4f transformation = icp.getFinalTransformation();
+
+          std::cout << icp.getFinalTransformation() << std::endl;
+
+          current_pose_hom = current_pose_hom * transformation;
+
+          tf2::Matrix3x3 rotation_mat(current_pose_hom(0, 0), current_pose_hom(0, 1), current_pose_hom(0, 2), current_pose_hom(1, 0), current_pose_hom(1, 1), current_pose_hom(1, 2), current_pose_hom(2, 0), current_pose_hom(2, 1), current_pose_hom(2, 2));
+          tf2::Vector3 translation_mat(current_pose_hom(0, 3), current_pose_hom(1, 3), current_pose_hom(2, 3));
+          tf2::Transform trans_tf(rotation_mat, translation_mat);
+
+          transform_stamped.header.stamp = scan_in.header.stamp;
+          transform_stamped.header.frame_id = "/base_footprint";
+          transform_stamped.child_frame_id = "transformed_frame";
+          transform_stamped.transform = tf2::toMsg(trans_tf);
+          tf_broadcaster.sendTransform(transform_stamped);
+
+          nav_msgs::Odometry odom;
+          odom.header.stamp = scan_in.header.stamp;
+          odom.header.frame_id = "/base_footprint";
+          odom.child_frame_id = "transformed_frame";
+
+          odom.pose.pose.orientation.x = transform_stamped.transform.rotation.x;
+          odom.pose.pose.orientation.y = transform_stamped.transform.rotation.y;
+          odom.pose.pose.orientation.z = transform_stamped.transform.rotation.z;
+          odom.pose.pose.orientation.w = transform_stamped.transform.rotation.w;
+
+          odom.pose.pose.position.x = transform_stamped.transform.translation.x;
+          odom.pose.pose.position.y = transform_stamped.transform.translation.y;
+          odom.pose.pose.position.z = transform_stamped.transform.translation.z;
+
+          icp_odom_pub.publish(odom);
+
+          // end ----------------------------------------------------------------------------
 
           *previous_cloud = *current_cloud;
      }
@@ -127,7 +182,7 @@ int main(int argc, char **argv)
      std::string base_tf;
      std::string laser_topic;
 
-     node.param("/laser_to_pointcloud/base_tf", base_tf, std::string("/odom"));
+     node.param("/laser_to_pointcloud/base_tf", base_tf, std::string("/base_footprint"));
      node.param("/laser_to_pointcloud/laser_topic", laser_topic, std::string("/scan"));
 
      LaserScanReceiver laser(node, base_tf, laser_topic);

@@ -1,0 +1,40 @@
+[ 28%] Built target quaternion_to_rotation_matrix
+[ 71%] Built target icp_main
+[35m[1mScanning dependencies of target get_laser_data[0m
+[ 85%] [32mBuilding CXX object CMakeFiles/get_laser_data.dir/src/get_laser_data.cpp.o[0m
+[01m[K/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/src/icp/src/get_laser_data.cpp:[m[K In constructor ‘[01m[KLaserScanReceiver::LaserScanReceiver(ros::NodeHandle, std::__cxx11::string, std::__cxx11::string)[m[K’:
+[01m[K/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/src/icp/src/get_laser_data.cpp:53:100:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Ktf::MessageFilter<sensor_msgs::LaserScan_<std::allocator<void> > >::MessageFilter()[m[K’
+                                                                                   laser_topic(topic[01;31m[K)[m[K
+                                                                                                    [01;31m[K^[m[K
+In file included from [01m[K/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/src/icp/src/get_laser_data.cpp:5:0[m[K:
+[01m[K/opt/ros/melodic/include/tf/message_filter.h:145:3:[m[K [01;36m[Knote: [m[Kcandidate: template<class F> tf::MessageFilter<M>::MessageFilter(F&, tf::Transformer&, const string&, uint32_t, ros::NodeHandle, ros::Duration)
+   [01;36m[KMessageFilter[m[K(F& f, Transformer& tf, const std::string& target_frame, uint32_t queue_size, ros::NodeHandle nh = ros::NodeHandle(), ros::Duration max_rate = ros::Duration(0.01))
+   [01;36m[K^~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/tf/message_filter.h:145:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/src/icp/src/get_laser_data.cpp:53:100:[m[K [01;36m[Knote: [m[K  candidate expects 6 arguments, 0 provided
+                                                                                   laser_topic(topic[01;36m[K)[m[K
+                                                                                                    [01;36m[K^[m[K
+In file included from [01m[K/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/src/icp/src/get_laser_data.cpp:5:0[m[K:
+[01m[K/opt/ros/melodic/include/tf/message_filter.h:123:3:[m[K [01;36m[Knote: [m[Kcandidate: tf::MessageFilter<M>::MessageFilter(tf::Transformer&, const string&, uint32_t, ros::NodeHandle, ros::Duration) [with M = sensor_msgs::LaserScan_<std::allocator<void> >; std::__cxx11::string = std::__cxx11::basic_string<char>; uint32_t = unsigned int]
+   [01;36m[KMessageFilter[m[K(Transformer& tf, const std::string& target_frame, uint32_t queue_size, ros::NodeHandle nh = ros::NodeHandle(), ros::Duration max_rate = ros::Duration(0.01))
+   [01;36m[K^~~~~~~~~~~~~[m[K
+[01m[K/opt/ros/melodic/include/tf/message_filter.h:123:3:[m[K [01;36m[Knote: [m[K  candidate expects 5 arguments, 0 provided
+[01m[K/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/src/icp/src/get_laser_data.cpp:54:83:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K{[m[K’ before ‘[01m[Klaser_sub[m[K’
+                                                                                   [01;31m[Klaser_sub[m[K(n, topic, 100),
+                                                                                   [01;31m[K^~~~~~~~~[m[K
+In file included from [01m[K/usr/include/pcl-1.8/pcl/sample_consensus/sac_model.h:52:0[m[K,
+                 from [01m[K/usr/include/pcl-1.8/pcl/sample_consensus/sac.h:45[m[K,
+                 from [01m[K/usr/include/pcl-1.8/pcl/sample_consensus/ransac.h:44[m[K,
+                 from [01m[K/usr/include/pcl-1.8/pcl/registration/icp.h:45[m[K,
+                 from [01m[K/home/mtrx5700/Desktop/MTRX5700/MTRX5700_Ass_3/src/icp/src/get_laser_data.cpp:17[m[K:
+[01m[K/usr/include/pcl-1.8/pcl/sample_consensus/model_types.h:[m[K In function ‘[01m[Kvoid __static_initialization_and_destruction_0(int, int)[m[K’:
+[01m[K/usr/include/pcl-1.8/pcl/sample_consensus/model_types.h:99:3:[m[K [01;35m[Kwarning: [m[K‘[01m[Kpcl::SAC_SAMPLE_SIZE[m[K’ is deprecated: This map is deprecated and is kept only to prevent breaking existing user code. Starting from PCL 1.8.0 model sample size is a protected member of the SampleConsensusModel class [[01;35m[K-Wdeprecated-declarations[m[K]
+   [01;35m[KSAC_SAMPLE_SIZE[m[K (sample_size_pairs, sample_size_pairs + sizeof (sample_size_pairs) / sizeof (SampleSizeModel));
+   [01;35m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/usr/include/pcl-1.8/pcl/sample_consensus/model_types.h:99:3:[m[K [01;36m[Knote: [m[Kdeclared here
+CMakeFiles/get_laser_data.dir/build.make:62: recipe for target 'CMakeFiles/get_laser_data.dir/src/get_laser_data.cpp.o' failed
+make[2]: *** [CMakeFiles/get_laser_data.dir/src/get_laser_data.cpp.o] Error 1
+CMakeFiles/Makefile2:1389: recipe for target 'CMakeFiles/get_laser_data.dir/all' failed
+make[1]: *** [CMakeFiles/get_laser_data.dir/all] Error 2
+Makefile:140: recipe for target 'all' failed
+make: *** [all] Error 2
