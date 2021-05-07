@@ -137,15 +137,11 @@ public:
           icp.setInputSource(current_cloud);
           icp.setInputTarget(previous_cloud);
 
-          // maximum correspondance distance of 0.1m
+          // maximum correspondance distance of 0.4m
           icp.setMaxCorrespondenceDistance(0.4f);
 
           // Set the transformation epsilon
           icp.setTransformationEpsilon(1e-9);
-
-          // icp.setMaximumIterations(500);
-          // icp.setEuclideanFitnessEpsilon(1);
-          // icp.setRANSACOutlierRejectionThreshold(1.5);
 
           // Find iterative closest point
           pcl::PointCloud<pcl::PointXYZ> Final;
