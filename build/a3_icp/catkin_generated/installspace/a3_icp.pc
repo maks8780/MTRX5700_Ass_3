@@ -1,8 +1,0 @@
-prefix=/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/install
-
-Name: a3_icp
-Description: Description of a3_icp
-Version: 1.0.0
-Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib 
-Requires: tf2_ros tf2_eigen tf2_geometry_msgs transform_broadcaster geometry_msgs sensor_msgs image_transport cv_bridge roscpp std_msgs rosbag std_msgs sensor_msgs roslib laser_geometry
