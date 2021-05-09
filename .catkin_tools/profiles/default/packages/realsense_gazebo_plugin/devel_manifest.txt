@@ -1,6 +1,0 @@
-SLAM/realsense_gazebo_plugin
-/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/devel/.private/realsense_gazebo_plugin/cmake.lock /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/devel/./cmake.lock
-/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/devel/.private/realsense_gazebo_plugin/lib/librealsense_gazebo_plugin.so /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/devel/lib/librealsense_gazebo_plugin.so
-/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/devel/.private/realsense_gazebo_plugin/lib/pkgconfig/realsense_gazebo_plugin.pc /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/devel/lib/pkgconfig/realsense_gazebo_plugin.pc
-/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/devel/.private/realsense_gazebo_plugin/share/realsense_gazebo_plugin/cmake/realsense_gazebo_pluginConfig-version.cmake /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/devel/share/realsense_gazebo_plugin/cmake/realsense_gazebo_pluginConfig-version.cmake
-/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/devel/.private/realsense_gazebo_plugin/share/realsense_gazebo_plugin/cmake/realsense_gazebo_pluginConfig.cmake /home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/devel/share/realsense_gazebo_plugin/cmake/realsense_gazebo_pluginConfig.cmake

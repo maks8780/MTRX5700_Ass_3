@@ -64,7 +64,7 @@ def transCallback(trans):
 
     pub_trans.publish(path_GM)
 
-    if timeStamp - currentTime > rospy.Duration(0.2):
+    if timeStamp - currentTime > rospy.Duration(0.5):
         F_trans.write(str(timeStamp) + " " + str(pose_trans.pose.position.x) + " " + 
         str(pose_trans.pose.position.y) + " " + str(pose_trans.pose.position.z) + " " + 
         str(pose_trans.pose.orientation.x) + " " + str(pose_trans.pose.orientation.y)+ " " + 
