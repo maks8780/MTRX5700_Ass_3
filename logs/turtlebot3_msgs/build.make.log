@@ -1,5 +1,5 @@
-[  0%] Built target std_msgs_generate_messages_cpp
 [  0%] Built target _turtlebot3_msgs_generate_messages_check_deps_SensorState
+[  0%] Built target std_msgs_generate_messages_cpp
 [  0%] Built target _turtlebot3_msgs_generate_messages_check_deps_VersionInfo
 [  0%] Built target _turtlebot3_msgs_generate_messages_check_deps_Sound
 [  0%] Built target std_msgs_generate_messages_py

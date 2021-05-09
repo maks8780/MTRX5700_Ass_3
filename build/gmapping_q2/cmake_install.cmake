@@ -143,6 +143,10 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gmapping_q2" TYPE FILE FILES "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/src/gmapping_q2/package.xml")
 endif()
 
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gmapping_q2" TYPE DIRECTORY FILES "/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/src/gmapping_q2/launch")
+endif()
+
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/mtrx5700/Documents/University/MTRX5700/MTRX5700_Ass_3/build/gmapping_q2/gtest/cmake_install.cmake")
