@@ -13,9 +13,13 @@ from Absolute2RelativeXY import Absolute2RelativeXY
 from pi2pi import pi2pi
 
 from visualization_msgs.msg import Marker, MarkerArray
+from threading import RLock
 
-from tf_conversions import transformations
+
+from scipy.spatial.transform import Rotation as R
+# from tf_conversions import transformations
 from std_msgs.msg import Float32
+import sys
 
 # standar deviation for simulated odometry
 std_dev_linear_vel =  0.1
@@ -149,7 +153,7 @@ class Robot ():
         return landmark_abs, H1, H2
 
 
-class KalmanFilter(Robot):
+class KalmanFilter():
     """
     This is the class that implements the Landmark SLAM Kalman Filter.
     """
@@ -167,6 +171,13 @@ class KalmanFilter(Robot):
         self.state_mean = mean
         self.state_covariance = covariance
         self.robot = robot
+        self.landmarks = []
+        self.taglist = []
+
+
+    @property
+    def number_landmarks(self):
+        return len(self.landmarks)
 
     def setStateMean(self, mean):
         """
@@ -208,14 +219,35 @@ class KalmanFilter(Robot):
         :param motion: a vector of the form [dx, dy, dtheta] corresponding to motion in the robot's frame of reference.
         :param motion_cov: should be the 3 x 3 covariance matrix for the motion vector
         """
+        # motion = np.array(motion)
+        # motion_covariance = np.array(motion_covariance)
+        prior_robot_pose, F, W = self.robot.move(self.robot.getPose(), np.array(motion))
+        W = np.array(W)
+        F = np.array(F)
 
-        # TODO Estimate new pose and Jacobians
+        # get the prior covariance of the entire state incl landmarks
+        state_covariance = self.getStateCovariance()
+        robot_state_covariance = state_covariance[0:3, 0:3]
 
-        # TODO Calculate the prior covariance 
+        print("cov\n{}".format(state_covariance))
+        print("robot cov\n{}".format(robot_state_covariance))
 
+        # F_scattered = np.identity(robot_pose_covariance.shape[0])
+        # F_scattered[0:3, 0:3] = F
+
+        # Create the new covariance using the previous calculations, then update both covariances
+        print(W @ motion_covariance @ W.T)
+        robot_state_covariance = F @ robot_state_covariance @ F.T + W @ motion_covariance @ W.T
         
-        return prior_state_mean, prior_state_covariance
+        state_covariance[0:3, 0:3] = robot_state_covariance
+        self.setStateCovariance(state_covariance)
 
+        state_mean = self.getStateMean()
+        state_mean[0:3] = prior_robot_pose
+        state_mean = state_mean.reshape(state_mean.shape[0], 1)
+
+
+        self.setStateMean(state_mean)
         
     def update(self, measurement, measurementCovariance, new):
         """
@@ -224,27 +256,149 @@ class KalmanFilter(Robot):
         :param measurementCovariance: covariance of the measurement
         :return : posterior state mean and posterior state covariance
         """
+        global seenLandmarks_
+        # measurement = np.array(measurement)
+        # measurement = measurement.reshape(measurement.shape[0], 1)
 
-        # TODO Augment the state vector if the landmark is new
+        # measurementCovariance = np.array(measurementCovariance)
+        
+        measurement_absolute, G1, G2 = self.robot.inverseSense(self.robot.getPose(), measurement)
+        label = measurement[2]
 
-        # TODO Augment state covariance if the landmark is new 
+        measurement_absolute = np.array(measurement_absolute)
+        G1 = np.array(G1, dtype=np.int16)
+        G2 = np.array(G2)
+        
+
+        state_covariance_matrix = self.getStateCovariance()
+        print("init sate cov {}".format(state_covariance_matrix))
+        # state_covariance_matrix = np.array(state_covariance_matrix)
+
+        state_vector = self.getStateMean()
+        print("init state mean {}".format(state_vector))
+        # state_vector = np.array(state_vector)
+
+        #Augment the state vector if the landmark is new
+        #TODO: should this be the relative landmark position or the absolute xy coordinate system?
+        #TODO: need to initalize with the inverse measurement function?
+        if new == 1:
+            #add new measurements to end of state
+            #do not include landmark label in measurement
+            # assert(measurement_absolute.shape == (2,1))
+            state_vector = np.append(state_vector, measurement_absolute)
+            state_vector = state_vector.reshape((state_vector.shape[0], 1))
+
+            self.setStateMean(state_vector)
+            rospy.loginfo("state vec\n {}".format(state_vector))
+            rospy.loginfo("state vec shape\n {}".format(state_vector.shape))
+
+
+            # Augment state covariance if the landmark is new 
+            # add new 3 col and 3 row and fix measurement covariance at end 
+
+            #get values of first row of covariance matrix
+
+            # print(G1)
+            print(state_covariance_matrix)
+            # print(state_covariance_matrix[0:3,:])
+            # print("here")
+
+            new_row_covariance = G1 @ state_covariance_matrix[0:3, :]
+            new_col_covariance = new_row_covariance.T
+
+
+            # rospy.loginfo("new row cov\n {}".format(new_row_covariance))
+            rospy.loginfo("new col cov\n {}".format(new_col_covariance))
+            # rospy.loginfo("state cov\n {}".format(state_covariance_matrix))
+
+
+            #construct covariance matrix with new landmark covariance in them
+            state_covariance_matrix= np.concatenate((state_covariance_matrix,new_col_covariance),axis=1)
+            new_row_covariance = np.concatenate((new_row_covariance, measurementCovariance), axis=1)
+            print(state_covariance_matrix)
+            print(new_row_covariance)
+
+            state_covariance_matrix = np.concatenate((state_covariance_matrix,new_row_covariance))
+            rospy.loginfo("state cov\n {}".format(state_covariance_matrix))
+            self.setStateCovariance(state_covariance_matrix)
+
+            # if new == 1:
+            #     rospy.signal_shutdown("yes")
+            #     sys.exit(0)
+
 
         # TODO Calculate expected measurement
+        # assert(label in seenLandmarks_)
+        print("Seen landmakrs {}".format(seenLandmarks_))
+        robot_pose = np.array(self.robot.getPose()[0:2])
+        label_index = seenLandmarks_.index(label)
+        start_index_state_vector = (label_index)*2 + 3
+        end_index_stat_vector = (label_index)*2 + 5
+
+        landmark_location = self.getStateMean()[start_index_state_vector : end_index_stat_vector]
+        # estimated_landmark_position = estimated_landmark_position.reshape(estimated_landmark_position.shape[0], 1)
+
+        relative_estimated_landmark_position =  np.array(landmark_location) - robot_pose
+        print("relative {}".format(relative_estimated_landmark_position))
 
         # TODO Calculate the innovation
+        innovation = np.atleast_2d(np.array(measurement[0:2])).T - relative_estimated_landmark_position
+        N = state_covariance_matrix.shape[0]
+        print("N ", N)
+        C = np.zeros((2, N))
+        rospy.loginfo("innovation {}".format(innovation))
+
+
+
+        # if new == 1:
+        #     rospy.signal_shutdown("yes")
+        #     sys.exit(0)
+
+
+        C[:, 0:3] = G1
+        C[:, start_index_state_vector:end_index_stat_vector] = G2
+
+        rospy.loginfo("C shape\n {}".format(C.shape))
+        rospy.loginfo("cov shape\n {}".format(state_covariance_matrix.shape))
+        rospy.loginfo("measur shape\n {}".format(measurementCovariance.shape))
+        rospy.loginfo("C \n {}".format(C.dtype))
+
+        rospy.loginfo("state_type \n {}".format(state_covariance_matrix))
+
 
         # TODO Construct measurement Jacobian
-
+        K = np.array(state_covariance_matrix @  C.T @ np.linalg.inv((C @ state_covariance_matrix @ C.T + measurementCovariance)))
         # TODO Calculate the Innovation matrix
+
+        rospy.loginfo("K {}".format(K.shape))
 
         # TODO Calculate the Sensor state
 
         # TODO Calculate the Kalman gain
         
         # TODO Update posterior mean and cov
+        state_vector = self.getStateMean()
+        # state_vector = state_vector.reshape((state_vector.shape[0], 1))
+        # update_state = (K @ innovation)
+        # print(update_state)
+        # print(update_state.shape)
+
+        rospy.loginfo("State vector {}".format(state_vector))
+        print("State veoctor size {}".format(state_vector.shape))
+        # print(state_vector.shape)
+        # state_vector = np.add(state_vector, update_state)
+        state_vector += K @ innovation
 
 
-        return posterior_state_mean, posterior_state_covariance
+        state_covariance_matrix = ( np.eye(N) - K @ C) @ state_covariance_matrix
+        # print("Final cov shape: {}".format(state_covariance_matrix.shape))
+        self.setStateCovariance(state_covariance_matrix)
+
+        state_vector = state_vector.reshape((state_vector.shape[0], 1))
+        self.setStateMean(state_vector)
+
+
+        # return posterior_state_mean, posterior_state_covariance
         
 class SLAM(KalmanFilter):
 
@@ -290,7 +444,9 @@ class SLAM(KalmanFilter):
                                            [0.0, (s_linear_vel_y)**2, 0.0],
                                            [0.0, 0.0, (s_angular_vel)**2]])
 
+        self.lock.acquire()
         self.KF.predict(self.motion_command, self.motion_covariance)
+        self.lock.release()
         
         det_msg = Float32()
         det_msg.data = np.linalg.det(self.KF.getStateCovariance())
@@ -326,19 +482,21 @@ class SLAM(KalmanFilter):
             
             # get covariance from data received
             # Simulation: we create the covariance matrix from the s_landmark values set for simulation
-            self.measurement_covariance = [[landmark.s_x, 0.0],
-                                           [0.0, landmark.s_y]]        
+            self.measurement_covariance = np.array([[landmark.s_x, 0.0],
+                                           [0.0, landmark.s_y]] )       
             
             # Deal with measurement covariance close to zero
             if landmark.s_x < 10**(-4) and landmark.s_y < 10**(-4):
                print("Measurement covariance is close to zero.")
-               self.measurement_covariance = [[0.01,0.0], [0.0, 0.01]]   # 10 cm ??     
+               self.measurement_covariance = np.array([[0.01,0.0], [0.0, 0.01]])   # 10 cm ??     
                 
             # call KF to execute an update
-            try:
-                self.KF.update(measurement, self.measurement_covariance , new)  
-            except ValueError:
-                return
+            # try:
+            self.lock.acquire()
+            self.KF.update(np.array(measurement), self.measurement_covariance , new)
+            self.lock.release()
+            # except ValueError as e:
+                # rospy.logwarn(e)
         
 
     def publish_traj(self):
@@ -346,13 +504,17 @@ class SLAM(KalmanFilter):
             return
         # accumulate the poses in the robot's state
         robot_pose = self.KF.getStateMean()[0:3]
+        print(robot_pose.shape)
+        print("Publish pose {}".format(robot_pose))
         self.traj_msg.header.seq = self.seq       # sequence ID
         self.traj_msg.header.stamp = self.time    # time stamp
         pose = PoseStamped()
         pose.pose.position.x = robot_pose[0]
         pose.pose.position.y = robot_pose[1]
         pose.pose.position.z = 0.0
-        quat = transformations.quaternion_from_euler(0.0, 0.0, robot_pose[2])
+        # quat = transformations.quaternion_from_euler(0.0, 0.0, robot_pose[2])
+        r = R.from_euler('xyz', [0, 0, robot_pose[2]])
+        quat = r.as_quat()
         pose.pose.orientation.x = quat[0]
         pose.pose.orientation.y = quat[1]
         pose.pose.orientation.z = quat[2]
@@ -376,17 +538,21 @@ class SLAM(KalmanFilter):
         msg.child_frame_id = 'base_link'
 
         # Construct content
-        current_pose =  self.KF.getStateMean()[0:dimR_]     # latest (x, y, yaw)
+        current_pose =  np.array(self.KF.getStateMean()[0:dimR_])     # latest (x, y, yaw)
+        rospy.loginfo("Current pose {}".format(current_pose))
+        rospy.loginfo("Current pose z {}".format(current_pose[2]))
         msg.pose.pose.position.x = current_pose[0]
         msg.pose.pose.position.y = current_pose[1]
         msg.pose.pose.position.z = 0.0
-        quat = transformations.quaternion_from_euler(0.0, 0.0, current_pose[2])
+        # quat = transformations.quaternion_from_euler(0.0, 0.0, current_pose[2])
+        r = R.from_euler('xyz',[0, 0, current_pose[2]])
+        quat = r.as_quat()
         msg.pose.pose.orientation.x = quat[0]
         msg.pose.pose.orientation.y = quat[1]
         msg.pose.pose.orientation.z = quat[2]
         msg.pose.pose.orientation.w = quat[3]
 
-        current_covariance = self.KF.getStateCovariance()[0:dimR_, 0:dimR_]   # latest 3x3 covariance
+        current_covariance = np.array(self.KF.getStateCovariance()[0:dimR_, 0:dimR_])   # latest 3x3 covariance
         cov = np.zeros((36, 1), dtype=np.float)
         cov[0] = current_covariance[0, 0]
         cov[1] = current_covariance[0, 1]
@@ -401,11 +567,13 @@ class SLAM(KalmanFilter):
 
         self.pub_odom.publish(msg)
 
+        rospy.loginfo("State mean {}".format(self.KF.getStateMean()))
+        rospy.loginfo("seen landmarks {}".format(seenLandmarks_))
+        # state_mean = np.array()
         Landmark_poses = self.KF.getStateMean()[dimR_:]
         print('landmark poses ',Landmark_poses)
         marker_array_msg = MarkerArray()
-
-        for i in range(len(Landmark_poses)/2): 
+        for i in range(int(len(Landmark_poses)/2)): 
             marker = Marker()
             marker.header.frame_id = 'odom'
             marker.id = seenLandmarks_[i]
@@ -428,7 +596,8 @@ class SLAM(KalmanFilter):
 
     # Must have __init__(self) function for a class, similar to a C++ class constructor.
     def __init__(self):
-        
+        self.lock = RLock()
+
         # Initialise robot
         self.time = None    # variable to keep current time
         self.seq = 0

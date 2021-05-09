@@ -162,14 +162,12 @@ class PublishLandmarks:
         """
         # Simulation labels: Purple: 0, Orange: 1, Yellow: 2, Blue: 3,
         # Green: 4, Red: 5, Black: 6, Turquoise: 7
-
         msg_landmarks = Landmarks_Msg()
         marker_array_msg = MarkerArray()
 
         # In the gazebo/model_states, the cylinders are labelled as obstacle_1 to 8
         for i in range(0, 8):
             landmark_position_rel_gt = self.gazebo_srv('obstacle_' + str(i+1), 'turtlebot3_burger').pose.position
-
             # check for infront and within field of view
             if landmark_position_rel_gt.x>0:
                 tan_val = abs(landmark_position_rel_gt.y/landmark_position_rel_gt.x)

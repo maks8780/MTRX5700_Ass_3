@@ -24,15 +24,15 @@ def ErrorFunction(solution_file, gt_file):
         f = open(solution_file, 'r')
         for line in f:
             info = line.split(' ')
-            if len(info) > 1 and info[1] == 'POINT2D':
-                landmark_pred.append([info[2], info[3], info[4]])
+            if len(info) > 1 and info[0] == 'POINT2D':
+                landmark_pred.append([info[1], info[2], info[3]])
         f.close()
            
         f = open(gt_file, 'r')
         for line in f:
             info = line.split(' ')
-            if len(info) > 1 and info[1] == 'POINT2D':
-                landmark_gt.append([info[2], info[3], info[4]])
+            if len(info) > 1 and info[0] == 'POINT2D':
+                landmark_gt.append([info[1], info[2], info[3]])
         f.close()
 
     # Compute positions of landmarks relative to the positions of another landmark
@@ -51,7 +51,7 @@ def ErrorFunction(solution_file, gt_file):
         # '
         # '
         # '
-        landmarks_gt_rel = RelativeLandmarkPositions(landmark_gt[label1-1], landmark_gt[label2-1])
+        landmarks_gt_rel = RelativeLandmarkPositions(landmark_gt[label1], landmark_gt[label2])
         landmark_error.append(np.array(landmarks_gt_rel) - np.array(landmarks_pred_rel))
     
     if len(landmark_pred) > 1:
@@ -70,7 +70,10 @@ if __name__ == "__main__":
     """
 
     file_solution = 'map_slam.txt'
+    # file_solution = '/home/jarod/catkin_ws/src/SLAM/Lab3_SLAM/map_slam.txt'
     file_gt = 'gt.txt'
+    # file_gt = '/home/jarod/catkin_ws/src/SLAM/Lab3_SLAM/gt.txt'
     error = ErrorFunction(file_solution, file_gt)
+    print("Error:", error)
     
 

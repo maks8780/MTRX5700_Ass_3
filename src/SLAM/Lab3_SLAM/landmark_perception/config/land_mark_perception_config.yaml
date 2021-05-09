@@ -1,0 +1,117 @@
+# Input Cloud and Filtering
+downsample_leaf_size: 0.002 # (0.002 for gazebo)
+downsample_mesh: false
+downsample_scene: true
+z_min: 0.01
+z_max: 2.5
+
+max_cluster_area: 400
+pixel_crop: 70
+
+
+std_dev_landmark_x: 0.05
+std_dev_landmark_y: 0.05
+
+# # FPFH (0.005, 0.01)
+# fpfh_normal_radius: 0.02
+# fpfh_feature_radius: 0.04 # Must be greater than fpfh_normal_radius
+
+# # FPFH Colour Limits
+# fpfh_hue_factor: 1.0 # fraction of how close hue must be (0.00 = accept only same colour, 1.00 = accept all colours)
+# fpfh_min_value: 0.00      # 0.0 - 1.0
+# fpfh_min_saturation: 0.00 # 0.0 - 1.0
+
+# # TEASER
+# noise_bound: 0.005
+
+# Clustering (note that size is after downsampling)
+min_cluster_size: 4000
+max_cluster_size: 20000
+cluster_tolerance_factor: 4 # should be >= 1.0 (2.0 for gazebo)
+cluster_min_z_threshold: 0.5
+
+# Noise removal
+statistical_outlier_meank: 3
+statistical_outlier_stddevs: 0.25
+radius_outlier_factor: 1.35 # > 1.0, probably > cluster_tolerance_factor
+radius_outlier_min_neighbours: 4
+plane_segmentation_distance_threshold: 0.02
+
+# Analyse Scene
+hsv_histogram_error_factor: 0.65
+volume_ratio_error_factor: 0.35
+
+#colors
+red:
+  min_threshold:
+    - 0
+    - 0
+    - 30
+  max_threshold:
+    - 11
+    - 142
+    - 133
+
+light_blue:
+  min_threshold:
+    - 66
+    - 55
+    - 0
+  max_threshold:
+    - 132
+    - 133
+    - 73
+yellow:
+  min_threshold:
+    - 0
+    - 109
+    - 0
+  max_threshold:
+    - 128
+    - 255
+    - 255
+green:
+  min_threshold:
+    - 0
+    - 65
+    - 0
+  max_threshold:
+    - 91
+    - 255
+    - 46
+purple:
+  min_threshold:
+    - 41
+    - 0
+    - 139
+  max_threshold:
+    - 255
+    - 91
+    - 255
+orange:
+  min_threshold:
+    - 0
+    - 40
+    - 91
+  max_threshold:
+    - 24
+    - 138
+    - 255
+dark_blue:
+  min_threshold:
+    - 75
+    - 0
+    - 0
+  max_threshold:
+    - 255
+    - 87
+    - 53
+black:
+  min_threshold:
+    - 0
+    - 0
+    - 0
+  max_threshold:
+    - 13
+    - 11
+    - 11

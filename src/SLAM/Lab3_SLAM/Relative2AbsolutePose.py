@@ -55,6 +55,8 @@ def Relative2AbsolutePose(robot_pose_abs, u_rel):
           [np.sin(theta1), np.cos(theta1), 0],
           [0, 0, 1]]
 
+    assert(next_robot_pose_abs.shape == (3,1))
+
     return next_robot_pose_abs, H1, H2
 
 
